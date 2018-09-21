@@ -1,0 +1,40 @@
+<div class="jb_article">
+    <ul class="jb_leftNav fl">
+        <li
+            ng-cloak=""
+            ng-class="{ 'jb_article_active' : article.artIndex == $index }"
+            ng-repeat="list in navLinst track by $index"
+            ng-click="article.ClickVerticalNav($index, list)">
+            {{list.name}}
+        </li>
+        <div
+            class="jb_new_artcile"
+            ng-click="article.NewArticle(article.listContentOdd[0])" ng-cloak="">
+            {{article.lastNewArticle}}文章
+        </div>
+    </ul>
+    <div class="jb_list_img fr" when-scrolled="loadMore()">
+        <ul class="jb_img_content">
+            <li class="itemOdd" id="itemOdd">
+                <a href=""
+                   ng-repeat="imgList in article.listContentOdd track by $index"
+                   ng-click="article.NewArticle(imgList)">
+                    <img
+                        ng-src="{{imgList.thumbnailImagePc}}" alt="{{imgList.tagName}}">
+                    <p ng-cloak="">{{imgList.title}}</p>
+                </a>
+            </li>
+
+            <li class="itemEven"  id="itemEven">
+                <a href=""
+                   ng-repeat="imgList in article.listContentEven track by $index"
+                   ng-click="article.NewArticle(imgList)">
+                    <img
+                        ng-src="{{imgList.thumbnailImagePc}}" alt="{{imgList.tagName}}">
+                    <p ng-cloak="">{{imgList.title}}</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>

@@ -1,0 +1,159 @@
+/*import font*/
+@font-face {
+    font-family: AdobeFangsongStd-Regular;
+    src: url('../../font/AdobeFangsongStd-Regular.otf');
+}
+
+@font-face {
+    font-family: PingFangSC-Semibold;
+    src: url('../../font/PingFangSC-Semibold.woff.ttf');
+}
+
+@font-face {
+    font-family: PingFangSC-Regular;
+    src: url('../../font/PingFang SC Regular.ttf');
+}
+
+@font-face {
+    font-family: PingFangTC-Regular;
+    src: url('../../font/PingFang.ttc');
+}
+
+@font-face {
+    font-family: PingFangSC-Light;
+    src: url('../../font/PingFang Light.ttf');
+}
+
+@font-face {
+    font-family: PingFangSC-Medium;
+    src: url('../../font/PingFang-Medium.ttf');
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    font-family: "PingFangSC-Regular", "Microsoft YaHei", "微软雅黑", "Tahoma", "Helvetica", 'sans-serif';
+    background: #fff;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li, ol, dl, dd {
+    list-style: none;
+}
+
+button,
+input {
+    outline: none;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #bbb;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #bbb;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #bbb;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #bbb;
+}
+
+.dclearfix {
+    *zoom: 1;
+}
+
+.dclearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+input[required]:invalid,
+input:focus:invalid,
+textarea[required]:invalid,
+textarea:focus:invalid {
+    box-shadow: none;
+}
+
+img {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ins {
+    text-decoration: none;
+}
+
+html {
+    /*隐藏滚动条，当IE下溢出，仍然可以滚动*/
+    -ms-overflow-style: none;
+    /*火狐下隐藏滚动条*/
+    overflow: -moz-scrollbars-none;
+    overflow: hidden;
+}
+/*
+
+!*Chrome下隐藏滚动条，溢出可以透明滚动*!
+html::-webkit-scrollbar {
+    width: 0
+}
+
+#scrollbar {
+    visibility: collapse !important;
+}
+
+#scrollbar[orient="vertical"] {
+    display: none !important;
+}
+
+#scrollbar {
+    display: none !important;
+}
+
+select::-ms-expand {
+    display: none;
+}
+*/
+
+select {
+    /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+    border: solid 1px #000;
+    /*很关键：将默认的select选择框样式清除*/
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("../img/arrow-down.png") no-repeat scroll right center transparent;
+    background-size: 20%;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 30px;
+}
+
+
+

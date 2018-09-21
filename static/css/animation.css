@@ -1,0 +1,47 @@
+/*
+@keyframes jb_yellow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 21rem;
+    }
+}
+
+@-moz-keyframes jb_yellow !* Firefox *!
+{
+    from {
+        width: 0;
+    }
+    to {
+        width: 21rem;
+    }
+}
+
+@-webkit-keyframes jb_yellow !* Safari and Chrome *!
+{
+    from {
+        width: 0;
+    }
+    to {
+        width: 21rem;
+    }
+}
+
+@-o-keyframes jb_yellow !* Opera *!
+{
+    from {
+        width: 0;
+    }
+    to {
+        width: 21rem;
+    }
+}
+
+.jb_yellow {
+    animation: jb_yellow 2s;
+    -moz-animation: jb_yellow 2s; !* Firefox *!
+    -webkit-animation: jb_yellow 2s; !* Safari and Chrome *!
+    -o-animation: jb_yellow 2s; !* Opera *!
+}
+*/

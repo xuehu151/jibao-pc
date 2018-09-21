@@ -1,0 +1,67 @@
+<div class="jb_new_article new_article">
+    <div class="jb_article_txt fl">
+        <header>
+            <span ng-cloak="">{{contentInfo.title}}</span>
+           <div>
+               <i class="" ng-cloak="">
+                   <img src="././static/img/clock.png" alt="">
+               </i>
+               <ins>
+                   {{contentInfo.createTime | limitTo:10}}
+               </ins>
+           </div>
+            <div>
+                <i class="" ng-cloak="">
+                    <img src="././static/img/icon_chart.png" alt="">
+                </i>
+                <ins>
+                    {{contentInfo.commentCount}}
+                </ins>
+            </div>
+        </header>
+        <pre class="content viewbox" ng-bind-html="contentInfo.content"></pre>
+    </div>
+    <div class="jb_article_img comment fr">
+        <div class="article_img" ng-if="showHide !=1">
+            <img ng-src="{{contentInfo.bannerImagePc}}" alt="{{contentInfo.tagName}}">
+        </div>
+        <div class="jb_signUp"  ng-if="showHide ==1">
+            <div class="jb_comment_head">
+                <h4>
+                    <i></i>
+                    <span>评论</span>
+                    <span ng-cloak="">( {{contentInfo.commentCount}} )</span>
+                </h4>
+            </div>
+            <div class="jb_comments_ipt">
+                <input
+                    type="text"
+                    ng-model="newArticle.data.commentContent"
+                    placeholder="请输入您想说的话...">
+                <button ng-cloak="" ng-click="newArticle.Publish()">发 布</button>
+            </div>
+            <ul class="jb_comment_list viewbox">
+                <li ng-repeat="comment in contentInfo.commentList.content track by $index">
+                    <img ng-src="{{comment.icon}}" alt="用户头像">
+                    <h4 >
+                        <span ng-cloak="">{{comment.nickName}}</span>
+                        <i ng-cloak="">{{comment.commentDate}}</i>
+                    </h4>
+                    <p ng-cloak="">{{comment.comment}}</p>
+                </li>
+                <li style="color: #d2d1d3;" ng-if="!contentInfo.commentList.content.length">
+                    此活动还没有评论，赶快评论吧
+                </li>
+            </ul>
+        </div>
+
+        <div class="jb_comment">
+            <button
+                ng-click="newArticle.ViewComments(newArticle.showHide, contentInfo.commentOpen)"
+                ng-cloak="">
+                {{newArticle.ViewComment}}
+            </button>
+            <button ng-click="newArticle.GoBackPrev()">返回上一页</button>
+        </div>
+    </div>
+</div>

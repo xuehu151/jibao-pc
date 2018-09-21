@@ -1,0 +1,61 @@
+<div class="jb_new_article">
+    <div class="jb_article_txt lastActi fl">
+        <h3 ng-cloak="">{{lastActi.title}}</h3>
+        <pre class="content_article viewboxList" ng-bind-html="lastActi.infoContent"></pre>
+    </div>
+    <div class="jb_article_img lastActiImg fr last_height418">
+        <div ng-if="lastArticle.lastArticCurr==1" class="actimg">
+            <img ng-src="{{lastActi.thumbnailImagePc}}" alt="">
+        </div>
+        <div class="jb_signUp"  ng-if="lastArticle.lastArticCurr!=1">
+            <table>
+                <tr>
+                    <th>姓名</th>
+                    <td style="padding: 0 0">
+                        <input
+                            type="text"
+                            ng-model="lastArticle.data.userName"
+                            placeholder="请输入姓名">
+                    </td>
+                </tr>
+                <tr>
+                    <th>手机</th>
+                    <td style="padding: 0 0">
+                        <input
+                            type="text"
+                            ng-maxlength="11"
+                            ng-minlength="11"
+                            ng-pattern="/^1[3|5|9|8][0-9]\d{4,8}$/" required
+                            ng-model="lastArticle.data.mobile"
+                            placeholder="请输入手机号">
+                    </td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td style="padding: 0 0">
+                        <input
+                            type="text"
+                            ng-model="lastArticle.data.code"
+                            placeholder="请输入验证码"
+                            style="width: 50%">
+                        <button
+                            ng-disabled="lastArticle.btnDisabled"
+                            ng-click="lastArticle.getCode()"
+                            ng-cloak="">
+                            {{paracont}}
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="jb_comment TrafficRank">
+            <button
+                ng-cloak=""
+                ng-click="lastArticle.SignupOnce(lastArticle.lastArticCurr)">
+                {{lastArticle.TrafficRank}}
+            </button>
+        </div>
+    </div>
+</div>
+

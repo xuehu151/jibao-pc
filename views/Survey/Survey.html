@@ -1,0 +1,26 @@
+<div class="jb_Survey">
+    <div class="jb_Survey_bg"></div>
+    <ul class="jb_Survey_content">
+        <h3 ng-cloak="" ng-bind="survey.title"></h3>
+        <li ng-repeat="list in survey.content track by $index">
+            <h5 ng-cloak="">
+                <i ng-cloak="">{{$index+1}}</i>
+                {{list.category}}
+            </h5>
+            <p>请选择一个和自己最切合的答案,但要尽可能少选中性</p>
+            <span
+                ng-repeat="item in list.contentList"
+                ng-click="quesSurvey.Pitch(item, list.contentList)">
+                <i
+                    ng-class="{false: 'fa fa-circle-o', true: 'fa fa-dot-circle-o'}[item.check]"></i>
+                {{item.name}}
+            </span>
+        </li>
+        <br/> <br/> <br/>
+    </ul>
+    <div
+        class="subQues"
+        ng-click="quesSurvey.SubmitQues()">
+        提交问卷
+    </div>
+</div>

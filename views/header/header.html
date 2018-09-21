@@ -1,0 +1,69 @@
+<div class="headerContent" ng-controller="headerCtrl">
+    <header class="jb_header" >
+        <ul class="jb_header_left fl">
+            <li class="jb_logo"><img src="././static/img/logo.png" alt=""></li>
+            <li>
+            <span
+                ng-click="headData.clickNav(1)"
+                ng-class="{ 'jb_home_active' : homeIndex == 1 }">
+                首页
+            </span>
+            </li>
+            <li>
+            <span
+                ng-click="headData.clickNav(2)"
+                ng-class="{ 'jb_home_active' : homeIndex == 2 }">
+                文章
+            </span>
+            </li>
+            <li>
+            <span
+                ng-click="headData.clickNav(3)"
+                ng-class="{ 'jb_home_active' : homeIndex == 3 }">
+                关于我们
+            </span>
+            </li>
+        </ul>
+        <ul  class="jb_header_right fr">
+            <li>
+                <div class="ipt" ng-style="formWidth">
+                    <select
+                            class="mySelect"
+                            ng-init="selectedName = searchList[0].name"
+                            ng-model="selectedName.name"
+                            ng-change="headData.ChangeValue(selectedName.name)"
+                            ng-options="x.name for x in searchList"
+                            ng-style="hideAndShow">
+                        <option value="">全部</option>
+                    </select><!--  ng-blur="headData.LoseFocus()"-->
+                    <input
+                        type="text"
+                        ng-style="iptWidth"
+
+                        ng-focus="headData.PersonalData(1)"
+                        ng-model="data.title"
+                        placeholder="搜索从这里开始...">
+                    <span
+                        class="fa fa-search search"
+                        ng-style="borderRad"
+                        ng-click="SearchList()">
+                    </span>
+                </div>
+            </li>
+            <li ng-click="headData.PersonalData(2)">
+                <span  class="jb_user">
+                    <img ng-src="{{userImg}}" alt="">
+                </span>
+            </li>
+        </ul>
+    </header>
+    <div
+        class="jb_latest_activity"
+         ng-if="headerShowHide"
+         ng-click="CarouselLink(latestActivBtnArr[0])">
+        最新活动
+    </div>
+</div>
+
+
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html  ng-app="jibao">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>思创吉宝</title>
+        <!--字体库-->
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+        <!-- Bootstrap -->
+        <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="static/css/app.css" />
+        <link rel="stylesheet" type="text/css" href="static/css/animation.css" />
+        <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="static/layui/css/layui.css" />
+        <!--<link rel="stylesheet" type="text/css" href="static/Swiper/Swiper.min.css" />-->
+        <link href="https://cdn.bootcss.com/Swiper/4.3.0/css/swiper.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="static/Swiper/animate.min.css">
+
+        <!--微博-->
+        <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=3458636889" type="text/javascript" charset="utf-8"></script>
+
+    </head>
+	<body>
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script  src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="static/js/angular.min.js"></script>
+    <script src="static/js/angular-ui-router.min.js"></script>
+    <script src="static/js/ui-bootstrap-tpls-0.12.0.min.js"></script>
+    <script src="static/layui/layui.js"></script>
+
+    <!--swiper.animate-->
+    <script src="static/Swiper/swiper.animate1.0.3.min.js"></script>
+    <script src="static/Swiper/Swiper.min.js"></script>
+    <!--<script src="https://cdn.bootcss.com/Swiper/4.3.0/js/swiper.min.js"></script>-->
+    <script src="static/fileUpload/angular-file-upload.min.js"></script>
+    <!--滚动条 -->
+    <script  src="static/iscroll/jquery.nicescroll.min.js" ></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/config.js"></script>
+    <script src="app/controller/loginCtrl.js"></script>
+    <script src="app/controller/registerSuccessCtrl.js"></script>
+    <script src="app/controller/homeCtrl.js"></script>
+    <script src="app/controller/headerCtrl.js"></script>
+    <script src="app/controller/articleCtrl.js"></script>
+    <script src="app/controller/aboutUsCtrl.js"></script>
+    <script src="app/controller/newArticleCtrl.js"></script>
+    <script src="app/controller/latestActivityCtrl.js"></script>
+    <script src="app/controller/findPasswordCtrl.js"></script>
+    <script src="app/controller/nextStepOperaCtrl.js"></script>
+    <script src="app/controller/personalDataCtrl.js"></script>
+    <script src="app/controller/searchListCtrl.js"></script>
+    <script src="app/controller/surveyCtrl.js"></script>
+
+    <script src="app/service/services.js"></script>
+    <script src="app/directive/pageDirective.js"></script>
+    <script src="app/service/dataConfigJson.js"></script>
+    <script src="app/service/urlConfig.js"></script>
+    <!--<script src="app/util/utilService.js"></script>-->
+
+    <div ng-include="'views/header/header.html'"></div>
+    <div class="jb_container">
+        <div class="ib_content" ui-view></div>
+    </div>
+
+
+	</body>
+</html>
+
+

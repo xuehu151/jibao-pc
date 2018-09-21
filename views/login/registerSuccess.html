@@ -1,0 +1,52 @@
+<div class="jb_registSucc">
+    <div class="jb_success jb_loginContent">
+        <div class="jb_head">
+            <img src="././static/img/sure.png" alt="">
+            <span>注册成功!</span>
+        </div>
+
+        <div class="jb_chat_heads ">
+            <table>
+                <tr>
+                    <th>头像</th>
+                    <td style="text-align: left">
+                        <img ng-src="{{registSucc.succData.icon}}" alt="用户头像">
+                    </td>
+                    <td>
+                        <div class="file-box " >
+                            <input
+                                type="file"
+                                ngf-select="registSucc.ChangePhoto($file, $invalidFiles)" accept="mage/jpeg,image/gif,image/png"
+                                class="file-btn"/>
+                            <div style="    width: 10rem; text-align: left;">更改头像</div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>昵称</th>
+                    <td colspan="2" style="text-align: left">
+                        <input
+                            ng-model="registSucc.data.nickName"
+                            type="text"
+                            placeholder="{{registSucc.succData.nickName}}">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th></th>
+                    <td>
+                        <div ng-click="registSucc.ResFinish()" class="finish">完 成 </div>
+                    </td>
+                    <td>
+                        <span
+                            ng-click="registSucc.JumpOver()"
+                            style="color: #fcb557;margin-left: -15px;display: inline-block">
+                            跳 过
+                        </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

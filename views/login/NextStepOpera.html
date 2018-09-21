@@ -1,0 +1,64 @@
+<div class="jb_home">
+    <div class="jb_goback" ng-click="nextStep.goBack()"><&nbsp;&nbsp; 返回前一页</div>
+    <br/>
+    <div class="jb_loginContent jb_reset_pass">
+        <h4 ng-cloak="" >{{nextStep.text}}</h4>
+        <div ng-if="nextStep.current == 1" class="jb_login_warp">
+            <div class="jb_login_left find_pass_phone fl">
+                <div class="jb_form">
+                    <div class="jb_ipt">
+                        <input
+                            type="password"
+                            ng-model="nextStep.data.pw"
+                            ng-pattern="/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/"
+                            placeholder="请输入密码">
+                        <input
+                            type="password"
+                            ng-model="nextStep.rePw"
+                            placeholder="请再次输入">
+                    </div>
+                    <div class="jb_btn">
+                        <button
+                            ng-click="nextStep.Finished( )">
+                            完 成
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="nextStep.current == 2" class="jb_login_warp">
+            <div class=" find_pass_email jb_send_email_link">
+                <div class="jb_form">
+                    <div class="jb_ipt">
+                        <input
+                            type="password"
+                            ng-model="nextStep.data.pw"
+                            ng-pattern="/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/"
+                            placeholder="请输入密码">
+                        <input
+                            type="password"
+                            ng-model="nextStep.rePw"
+                            placeholder="请再次输入">
+                    </div>
+                    <div class="jb_btn">
+                        <button
+                            ng-click="nextStep.Finished( )">
+                            完 成
+                        </button>
+                    </div>
+                </div>
+               <!-- <div class="jb_ipt">
+                    <h3>修改链接已发送至你的注册邮箱，请查收</h3>
+                    <p>若没有收到，请查看垃圾邮件或重新发送</p>
+                </div>
+                <div class="jb_btn">
+                    <button
+                        ng-click="nextStep.SendAgain(findPass.current)">
+                        重新发送
+                    </button>
+                </div>-->
+            </div>
+        </div>
+    </div>
+</div>

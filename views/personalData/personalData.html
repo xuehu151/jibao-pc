@@ -1,0 +1,132 @@
+<div class="jb_person">
+    <div class="bg"></div>
+    <div class="jb_person_content" ng-if="personInfo.editAndShow==1">
+        <div class="jb_person_left fl">
+            <div class="user_photo">
+                <img ng-src="{{userData.icon}}" alt="用户头像">
+            </div>
+        </div>
+        <div class="jb_person_right fr" >
+            <div class="person_head">
+                <span>基础资料</span>
+                <button ng-click="personInfo.EditPersonInfo()">编 辑</button>
+            </div>
+            <table>
+                <tr>
+                    <th>姓名</th>
+                    <td ng-cloak="">{{userData.nickName}}</td>
+                </tr>
+                <tr>
+                    <th>邮件</th>
+                    <td ng-cloak="" ng-style="color">{{userData.email}}</td>
+                </tr>
+                <tr>
+                    <th>手机</th>
+                    <td ng-cloak="">{{userData.mobile}}</td>
+                </tr>
+            </table>
+            <div class="thirdparty">
+                <h4>第三方关联账号</h4>
+                <i class="fa fa-weibo"
+                   ng-class="{ 'releAccount' : personInfo.releAccount == 1 }"
+                   ng-click="personInfo.RelevWeibo(1,'weibo')"></i>
+                <i class="fa fa-qq"
+                    ng-class="{ 'releAccount' : personInfo.releAccount == 2 }"
+                   ng-click="personInfo.RelevWeibo(2, 'QQ')"></i>
+                <i class="fa fa-wechat"
+                    ng-class="{ 'releAccount' : personInfo.releAccount == 3 }"
+                   ng-click="personInfo.RelevWeibo(3,'weixin')"></i>
+            </div>
+        </div>
+
+        <div class="jb_exit"  style="background: #363840;"
+             ng-click="personInfo.Exit(lastArticle.lastArticCurr)">
+            <button ng-cloak="" >
+                {{lastArticle.TrafficRank}}退 出
+            </button>
+        </div>
+    </div>
+    <div class="jb_person_content" ng-if="personInfo.editAndShow!=1">
+        <div class="jb_edit_left fl">
+            <div class="person_head">
+                <span style="color: #1f0d1f">编辑资料</span>
+            </div>
+            <div class="user_photo">
+                <img ng-src="{{userData.icon}}" alt="用户头像">
+            </div>
+            <div class="person_head">
+                <span>选择jpg,png小于2M的图片</span>
+                <div class="file-box" >
+                    <input
+                        type="file"
+                        ngf-select="personInfo.uploadFiles($file, $invalidFiles)"
+                        accept="mage/jpeg,image/gif,image/png"
+                        class="file-btn"/>
+                    <div>更改头像</div>
+                </div>
+            </div>
+        </div>
+        <div class="jb_edit_right fr" >
+            <table>
+                <tr>
+                    <th>姓名</th>
+                    <td>
+                        <input
+                            style="color: #6e7385"
+                            type="text"
+                            ng-model="personInfo.data.nickName"
+                            placeholder="{{userData.nickName}}">
+                    </td>
+                </tr>
+               <!-- <tr>
+                    <th>邮 件</th>
+                    <td>
+                        <input
+                            type="text"
+                            ng-model="personInfo"
+                            placeholder="请输入邮箱号">
+                    </td>
+                </tr>
+                <tr>
+                    <th>手 机</th>
+                    <td>
+                        <input
+                            type="text"
+                            ng-model="personInfo.data.registerId"
+                            placeholder="请输入手机号">
+                    </td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>
+                        <input
+                            type="text"
+                            placeholder="请输入验证码"
+                            style="width: 52%;">
+                        <button
+                            ng-click="personInfo.getCode()"
+                            ng-cloak="">
+                            {{paracont}}
+                        </button>
+                    </td>
+                </tr>-->
+            </table>
+        </div>
+
+        <div
+            class="jb_exit jb_edit"
+             ng-click="personInfo.GoBackPrevPage(lastArticle.lastArticCurr)">
+            <button  ng-cloak="">
+                {{lastArticle.TrafficRank}}
+                返回上一页
+            </button>
+        </div>
+        <div class="jb_exit"
+             ng-click="personInfo.SaveChanges(lastArticle.lastArticCurr)">
+            <button ng-cloak="">
+                {{lastArticle.TrafficRank}}
+                保存更改
+            </button>
+        </div>
+    </div>
+</div>

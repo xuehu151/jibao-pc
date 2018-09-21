@@ -1,0 +1,128 @@
+<div class="jb_home" >
+   <div class="jb_home_head">
+       <div class="jb_active" ng-class="{ 'jb_active' : login.current == 1 }" ng-click="login.LogonOrResgist(1)">登 录</div>
+       <div ng-class="{ 'jb_active' : login.current == 2 }" ng-click="login.LogonOrResgist(2)">注 册</div>
+   </div>
+    <div class="jb_loginContent ">
+        <div ng-if="login.current == 1" class="jb_login_warp dclearfix">
+            <div class="jb_login_left fl">
+                <div class="jb_form">
+                    <div class="jb_ipt">
+                        <input
+                            type="text"
+                            ng-model="login.loginData.registerId"
+                            placeholder="手机号或邮箱">
+                        <input
+                            type="password"
+                            ng-model="login.loginData.passwd"
+                            placeholder="密码">
+                        <span
+                            class="jb_forget_password"
+                              ng-click="login.ForgetPass()">
+                            忘记密码?
+                        </span>
+                    </div>
+                    <div class="jb_btn">
+                        <button ng-click="login.LoginBtn()">登 录</button>
+                    </div>
+                </div>
+            </div>
+            <div class="jb_login_right fr">
+                <div class="jb_thirdparty">
+                    <span>或</span>
+                    <div class="jb_thirdparty_btn" ng-click="login.WeiboLogin('weibo')">
+                        <i class="fa fa-weibo"></i>
+                        <ins>微博</ins>
+                    </div>
+
+                    <div class="jb_thirdparty_btn"  ng-click="login.QQLogin()">
+                        <i class="fa fa-qq"></i>
+                        <ins>QQ</ins>
+                    </div>
+
+                    <div class="jb_thirdparty_btn"  ng-click="login.WeChatLogin('WeChat')">
+                        <i class="fa fa-wechat"></i>
+                        <ins>微信</ins>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--注册-->
+        <div ng-if="login.current == 2">
+            <div class="jb_regist_phone">
+                <div  class="jb_form">
+                    <div class="jb_ipt" ng-if="login.emailOfPhone==1">
+                        <div class="jb_email"
+                             ng-click="login.EmailOrPhone(login.emailOfPhone)">
+                            <i class="fa fa-envelope-o fa-lg"> &nbsp; </i>
+                            使用邮箱注册
+                        </div>
+                        <input
+                            type="text"
+                            ng-maxlength="11"
+                            ng-minlength="11"
+                            ng-pattern="/^1[3|5|9|8][0-9]\d{4,8}$/" required
+                            ng-model="login.data.registerId"
+                            placeholder="请输入注册手机号">
+                        <input
+                            type="password"
+                            ng-minlength="8"
+                            ng-maxlength="11"
+                            ng-pattern="/^[0-9A-Za-z]+$/"
+                            ng-model="login.registInfo.passwd"
+                            placeholder="设置8-10位字母+数字的密码">
+                        <div class="jb_verificationCode">
+                            <input
+                                type="text"
+                                ng-model="login.registInfo.code"
+                                placeholder="请输入验证码">
+                            <button
+                                ng-disabled="login.btnDisabled"
+                                ng-click="login.GetCode()"
+                                ng-cloak="">
+                                {{paracont}}
+                            </button>
+                        </div>
+                    </div>
+                    <div class="jb_ipt"  ng-if="login.emailOfPhone==2">
+                        <div class="jb_email"
+                             ng-click="login.EmailOrPhone(login.emailOfPhone)">
+                            <i class="icon_phone"> &nbsp; </i>
+                            使用手机注册
+                        </div>
+                        <input
+                            type="text"
+                            ng-model="login.registerId"
+                            ng-pattern="/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/" required
+                            placeholder="请输入注册邮箱号">
+                        <input
+                            type="password"
+                            ng-minlength="8"
+                            ng-maxlength="11"
+                            ng-pattern="/^[0-9a-zA-Z]+$/" required
+                            ng-model="login.registInfo.passwd"
+                            placeholder="设置8-10位字母+数字的密码">
+                        <div class="jb_verificationCode">
+                            <input
+                                type="text"
+                                ng-model="login.registInfo.code"
+                                placeholder="请输入验证码">
+                            <button
+                                ng-disabled="login.btnDisabled"
+                                ng-click="login.GetCode()"
+                                ng-cloak="">
+                                {{paracont}}
+                            </button>
+                        </div>
+                    </div>
+                    <div class="jb_btn">
+                        <button ng-click="login.RegistBtn()">注 册</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

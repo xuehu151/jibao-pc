@@ -1,0 +1,22 @@
+<div class="jb_search">
+
+    <ul class="search_content" when-scrolled="loadMore()">
+        <li  ng-repeat="search in contentList track by $index">
+            <a href=""
+               ng-repeat="every in search"
+               ng-click="searchList.GoToDetails(every)">
+               <img
+                ng-src="{{every.thumbnailImagePc}}"
+                alt="{{every.tagName}}">
+                <span ng-cloak="">
+                    {{every.themeName}}
+                </span>
+                <p ng-cloak="">{{every.title}}</p>
+            </a>
+        </li>
+
+    </ul>
+    <div class="jb_belt">
+        <div ng-if="!contentList[0].length && !contentList[1].length && !contentList[2].length ">没有符合的数据</div>
+    </div>
+</div>

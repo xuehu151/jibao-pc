@@ -1,0 +1,73 @@
+<div class="custorm_modal" ng-controller="modalCtrl">
+    <div class="modal_head">
+        <i class="fa fa-check-circle">确 认</i>
+    </div>
+    <div class="modal_content">
+        注册成功
+    </div>
+    <div class="modal_btn">
+        <button class="cancel" ng-click="cancel()">取 消</button>
+        <button class="sure" ng-click="sure()">确 定</button>
+    </div>
+</div>
+
+
+<style>
+    .modal-dialog{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content{
+        width: 60.5%;
+    }
+
+    .custorm_modal{
+        background: #f7f7f7;
+        width: 100%;
+        height: 15rem;
+        border-radius: 5px;
+    }
+
+    .modal_head{
+        text-align: center;
+        padding: 1rem 0;
+        font-size: 1.5rem;
+    }
+
+    .modal_content{
+        height: 7.5rem;
+        text-align: center;
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+        line-height: 7rem;
+    }
+
+    .modal_btn{
+        height: 35%;
+    }
+
+    .modal_btn .cancel{
+        width: 50%;
+        border-radius: 0 0 0 5px;
+        border: none;
+        padding: 1rem 0;
+        color: white;
+    }
+
+    .modal_btn .sure{
+        background: #fb9c1f;
+        border-radius: 0 0 5px 0;
+        width: 50%;
+        border: none;
+        padding: 1rem 0;
+        color: white;
+        margin-left: -4px;
+        border-left: 1px solid red;
+    }
+
+
+
+</style>

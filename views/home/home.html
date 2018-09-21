@@ -1,0 +1,82 @@
+<div class="jb_home_outer">
+    <div class="jb_yellow" id="jb_yellow"></div>
+    <div class="jb_content">
+        <div class="swiper-container jb_carousel" id="jb_carousel">
+            <div class="swiper-wrapper" >
+                <div class="swiper-slide" ng-repeat="img in carousel track by $index">
+                    <button
+                        class="ani"
+                        ng-click="homeInfo.CarouselLink(img)"
+                            swiper-animate-effect="fadeIn"
+                            swiper-animate-duration="3s"
+                            swiper-animate-delay=".5s">
+                        阅读详情
+                    </button>
+                    <a href=""
+                       class="car"
+                       ng-click="homeInfo.CarouselLink(img)">
+                        <div class="opcity_bg ani"
+                             swiper-animate-effect="shadowLay"
+                             swiper-animate-duration="1s"
+                             swiper-animate-delay=".5s">
+                        </div>
+                        <img class="ani"
+                             swiper-animate-effect="fadeIn"
+                             swiper-animate-duration="1s"
+                             swiper-animate-delay=".2s"
+                             ng-src="{{img.imgPc}}" alt="{{img.title}}">
+                    </a>
+
+                    <div
+                        class="jb_carousel_text"
+                        id="jb_carousel_text" ng-cloak="">
+                        <p class="ani title"
+                           swiper-animate-effect="bounceInRight"
+                           swiper-animate-duration="1s"
+                           swiper-animate-delay="1s">
+                            {{img.configXml.title}}
+                        </p>
+                        <div
+                            swiper-animate-effect="fadeInUp"
+                            swiper-animate-duration="1.5s"
+                            swiper-animate-delay="1s"
+                            class="ani title jb_carousel_content">
+                            {{img.configXml.content | CarouselContentFilter}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- <div class="line_1 ani"
+                            swiper-animate-effect="fadeInUp"
+                            swiper-animate-duration="2s"
+                            swiper-animate-delay=".2s"></div>
+    <div class="line_2 ani"
+                            swiper-animate-effect="fadeInUp"
+                            swiper-animate-duration="2s"
+                            swiper-animate-delay=".2s"></div>
+    <div class="line_3 ani"
+                            swiper-animate-effect="fadeInUp"
+                            swiper-animate-duration="2s"
+                            swiper-animate-delay=".2s"></div>
+    <div class="line_4 ani"
+                            swiper-animate-effect="fadeInUp"
+                            swiper-animate-duration="2s"
+                            swiper-animate-delay=".2s"></div>-->
+
+    <div class="page">
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class=" prev fa fa-angle-left " style="outline: none;"></div>
+        <div class=" next fa fa-angle-right" style="outline: none;"></div>
+        <div class="jb_realIndex" ng-cloak="">
+            {{pageIndex+1}} / {{carousel.length}}
+        </div>
+    </div>
+</div>
+<!--<div class="jb_latest_activity" ng-click="homeInfo.CarouselLink(carousel[0])">-->
+    <!--最新活动-->
+<!--</div>-->
